@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Main-->
+    <color name="colorPrimary_NIGHT">#008577</color>
+    <color name="colorPrimaryDark_NIGHT">#00574B</color>
+    <color name="colorAccent_NIGHT">#D81B60</color>
+
+    <!--Icon-->
+    <color name="colorIconActive_NIGHT">#FFFFFFFF</color>
+    <color name="colorIconInactive_NIGHT">#80FFFFFF</color>
+
+    <!--Text-->
+    <color name="colorPrimaryText_NIGHT">#ffffff</color>
+    <color name="colorSecondaryText_NIGHT">#ccffffff</color>
+
+    <!--Divider-->
+    <color name="colorDivider_NIGHT">#000000</color>
+    <color name="colorDividerLight_NIGHT">#333333</color>
+
+    <color name="white_NIGHT">#1B2936</color>
+    <color name="black_NIGHT">#FFF</color>
+
+    <color name="colorBackground_NIGHT">#1B2936</color>
+</resources>
