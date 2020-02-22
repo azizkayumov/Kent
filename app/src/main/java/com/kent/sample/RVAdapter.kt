@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.kent.layouts.*
+import com.kent.layouts.viewgroup.frameLayout
 
 /**
  * Created by abduaziz on 2020-02-22 at 07:46.
@@ -17,6 +18,7 @@ class RVAdapter : RecyclerView.Adapter<RVAdapter.ViewHolder>() {
             parent.context.frameLayout {
                 layoutParams = ViewGroup.LayoutParams(matchParent, dip(56))
                 padding = dip(16)
+                setRippleEffect()
 
                 textView {
                     layoutParams = FrameLayout.LayoutParams(wrapContent, wrapContent)

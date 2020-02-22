@@ -1,20 +1,22 @@
-apply plugin: 'com.android.application'
-
-apply plugin: 'kotlin-android'
+apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
+
     defaultConfig {
-        applicationId "com.kent.sample"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -37,5 +39,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
 
     implementation project(":layouts")
-    implementation project(":fragment")
+}
+
+repositories {
+    mavenCentral()
 }

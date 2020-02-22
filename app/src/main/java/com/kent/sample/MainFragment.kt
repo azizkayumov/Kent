@@ -1,10 +1,9 @@
 package com.kent.sample
 
 import android.content.Context
-import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.kent.layouts.*
+import android.view.View
+import androidx.appcompat.widget.AppCompatImageView
+import com.kent.fragment.BaseFragment
 
 /**
  * Created by abduaziz on 2020-02-22 at 00:25.
@@ -12,18 +11,7 @@ import com.kent.layouts.*
 
 class MainFragment : BaseFragment() {
 
-    override fun createView(context: Context) = verticalLayout {
-        layoutParams = ViewGroup.LayoutParams(matchParent, matchParent)
-
-        textView {
-            layoutParams = LinearLayout.LayoutParams(wrapContent, wrapContent)
-            text = "Hello, Kent!"
-        }
-
-        recyclerView {
-            layoutParams = LinearLayout.LayoutParams(matchParent, matchParent)
-            layoutManager = LinearLayoutManager(context)
-            adapter = RVAdapter()
-        }
+    override fun createView(context: Context): View? {
+        return mainUI()
     }
 }
