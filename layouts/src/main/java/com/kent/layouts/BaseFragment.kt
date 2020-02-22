@@ -2,6 +2,7 @@ package com.kent.layouts
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -90,6 +91,11 @@ abstract class BaseFragment {
     // on menu item clicked
     open fun menuClicked(item: MenuItem) {}
 
+    // alpha animate the ghost view
+    internal fun ghostAlpha(alpha: Float) {
+        ghostView?.alpha = alpha
+    }
+
     // language changed: set string resources
     open fun languageChanged() {}
 
@@ -97,4 +103,9 @@ abstract class BaseFragment {
     open fun themeChanged() {}
 
     open fun backPressed() {}
+
+    open fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {}
+
+    open fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {}
+
 }

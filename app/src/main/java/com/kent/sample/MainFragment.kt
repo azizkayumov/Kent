@@ -1,10 +1,10 @@
 package com.kent.sample
 
 import android.content.Context
-import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.kent.layouts.*
 
 /**
@@ -14,14 +14,18 @@ import com.kent.layouts.*
 class MainFragment : BaseFragment() {
 
     override fun createView(context: Context): View? {
-        return context.frameLayout {
+        return context.verticalLayout {
             layoutParams = ViewGroup.LayoutParams(matchParent, matchParent)
 
             textView {
-                layoutParams = FrameLayout.LayoutParams(wrapContent, wrapContent).apply {
-                    gravity = Gravity.CENTER
-                }
-                this.text = "Hello, Kent!"
+                layoutParams = LinearLayout.LayoutParams(wrapContent, wrapContent)
+                text = "Hello, Kent!"
+            }
+
+            recyclerView {
+                layoutParams = LinearLayout.LayoutParams(matchParent, matchParent)
+                layoutManager = LinearLayoutManager(context)
+                adapter = RVAdapter()
             }
         }
     }

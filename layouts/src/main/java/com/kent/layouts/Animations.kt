@@ -11,6 +11,12 @@ import android.view.animation.DecelerateInterpolator
  * Created by abduaziz on 2020-02-21 at 23:44.
  */
 
+val RIGHT = 0
+val LEFT = 1
+val BOTTOM = 2
+val FADE_IN = 3
+val FADE_OUT = 4
+
 
 val SHORT_ANIMATION = 150L
 val MID_ANIMATION = 200L

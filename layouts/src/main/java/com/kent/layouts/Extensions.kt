@@ -1,49 +1,43 @@
 package com.kent.layouts
 
 import android.content.Context
+import android.graphics.Paint
+import android.graphics.Typeface
+import android.graphics.drawable.Drawable
+import android.os.Build
+import android.telephony.PhoneNumberUtils
+import android.text.TextUtils
+import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.annotation.DimenRes
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
  * Created by abduaziz on 2020-02-21 at 23:29.
  */
 
-val matchParent: Int
-    get() = ViewGroup.LayoutParams.MATCH_PARENT
+val TAG = "Kent Layouts"
+
+fun log(l: String) {
+    Log.d(TAG, l)
+}
+
+fun longLog(l: String) {
+    val maxLogSize = 500
+    for (i in 0..l.length / maxLogSize) {
+        val start = i * maxLogSize
+        var end = (i + 1) * maxLogSize
+        end = if (end > l.length) l.length else end
+        if (i == 0)
+            Log.d(TAG, l.substring(start, end))
+        else
+            Log.d(TAG, "               " + l.substring(start, end))
+    }
+}
 
 
-val wrapContent: Int
-    get() = ViewGroup.LayoutParams.WRAP_CONTENT
-
-//returns dip(dp) dimension value in pixels
-fun Context.dip(value: Int): Int = (value * resources.displayMetrics.density).toInt()
-
-fun Context.dip(value: Float): Int = (value * resources.displayMetrics.density).toInt()
-
-//return sp dimension value in pixels
-fun Context.sp(value: Int): Int = (value * resources.displayMetrics.scaledDensity).toInt()
-
-fun Context.sp(value: Float): Int = (value * resources.displayMetrics.scaledDensity).toInt()
-
-//converts px value into dip or sp
-fun Context.px2dip(px: Int): Float = px.toFloat() / resources.displayMetrics.density
-
-fun Context.px2sp(px: Int): Float = px.toFloat() / resources.displayMetrics.scaledDensity
-
-fun Context.dimen(@DimenRes resource: Int): Int = resources.getDimensionPixelSize(resource)
-
-fun View.dip(value: Int): Int = context.dip(value)
-
-fun View.dip(value: Float): Int = context.dip(value)
-
-fun View.sp(value: Int): Int = context.sp(value)
-fun View.sp(value: Float): Int = context.sp(value)
-
-fun View.px2dip(px: Int): Float = context.px2dip(px)
-fun View.px2sp(px: Int): Float = context.px2sp(px)
-
-fun View.dimen(@DimenRes resource: Int): Int = context.dimen(resource)
