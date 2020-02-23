@@ -1,5 +1,6 @@
 package com.kent.layouts.viewgroup
 
+import android.app.Activity
 import android.content.Context
 import android.view.ViewGroup
 import android.widget.RelativeLayout
@@ -15,5 +16,11 @@ inline fun Context.relativeLayout(init: RelativeLayout.() -> Unit): RelativeLayo
 inline fun ViewGroup.relativeLayout(init: RelativeLayout.() -> Unit): RelativeLayout {
     val f = RelativeLayout(context).apply(init)
     addView(f)
+    return f
+}
+
+inline fun Activity.relativeLayout(init: RelativeLayout.() -> Unit): RelativeLayout {
+    val f = RelativeLayout(this).apply(init)
+    setContentView(f)
     return f
 }

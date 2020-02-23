@@ -70,7 +70,7 @@ var TextView.textSizeDimen: Int
 
 var TextView.textColorResource: Int
     get() = noGetter()
-    set(colorId) = setTextColor(context.resources.getColor(colorId))
+    set(colorId) = setTextColor(ContextCompat.getColor(context, colorId))
 
 fun TextView.setStyle(context: Context, resId: Int) {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {

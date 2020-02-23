@@ -1,5 +1,6 @@
 package com.kent.layouts.viewgroup
 
+import android.app.Activity
 import android.content.Context
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -15,5 +16,11 @@ inline fun Context.frameLayout(init: FrameLayout.() -> Unit): FrameLayout {
 inline fun ViewGroup.frameLayout(init: FrameLayout.() -> Unit): FrameLayout {
     val f = FrameLayout(context).apply(init)
     addView(f)
+    return f
+}
+
+inline fun Activity.frameLayout(init: FrameLayout.() -> Unit): FrameLayout {
+    val f = FrameLayout(this).apply(init)
+    setContentView(f)
     return f
 }

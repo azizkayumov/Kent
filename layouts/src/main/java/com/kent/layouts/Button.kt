@@ -24,7 +24,7 @@ inline fun Context.button(init: AppCompatButton.() -> Unit = {}): AppCompatButto
 
 inline fun ViewGroup.button(init: AppCompatButton.() -> Unit = {}): AppCompatButton {
     val a = AppCompatButton(context).apply(init)
-    addView(this)
+    addView(a)
     return a
 }
 
