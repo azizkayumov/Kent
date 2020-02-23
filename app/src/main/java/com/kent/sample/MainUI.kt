@@ -34,7 +34,7 @@ fun MainFragment.mainUI() = ctx.frameLayout {
             setStyle(ctx, android.R.style.TextAppearance_DeviceDefault_Widget_ActionBar_Title)
             gravity = Gravity.CENTER_VERTICAL
             setTextColor(Color.WHITE)
-            text = "Jetnews"
+            text = "Newsfeed"
         }
 
         imageView {

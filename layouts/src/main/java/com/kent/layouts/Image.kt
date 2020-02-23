@@ -9,6 +9,10 @@ import androidx.core.content.ContextCompat
  * Created by abduaziz on 2020-02-23 at 06:29.
  */
 
+inline fun Context.imageView(init: AppCompatImageView.() -> Unit = {}): AppCompatImageView {
+    return AppCompatImageView(this).apply(init)
+}
+
 inline fun ViewGroup.imageView(init: AppCompatImageView.() -> Unit = {}): AppCompatImageView {
     val a = AppCompatImageView(context).apply(init)
     addView(a)

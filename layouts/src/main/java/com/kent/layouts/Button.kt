@@ -18,19 +18,31 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 * - Floating action button
 * */
 
-fun ViewGroup.button(init: AppCompatButton.() -> Unit = {}): AppCompatButton {
+inline fun Context.button(init: AppCompatButton.() -> Unit = {}): AppCompatButton {
+    return AppCompatButton(this).apply(init)
+}
+
+inline fun ViewGroup.button(init: AppCompatButton.() -> Unit = {}): AppCompatButton {
     val a = AppCompatButton(context).apply(init)
     addView(this)
     return a
 }
 
-fun ViewGroup.materialButton(init: MaterialButton.() -> Unit = {}): MaterialButton {
+inline fun Context.materialButton(init: MaterialButton.() -> Unit = {}): MaterialButton {
+    return MaterialButton(this).apply(init)
+}
+
+inline fun ViewGroup.materialButton(init: MaterialButton.() -> Unit = {}): MaterialButton {
     val m = MaterialButton(context).apply(init)
     addView(m)
     return m
 }
 
-fun ViewGroup.floatingActionButton(init: FloatingActionButton.() -> Unit = {}): FloatingActionButton {
+inline fun Context.floatingActionButton(init: FloatingActionButton.() -> Unit = {}): FloatingActionButton {
+    return FloatingActionButton(this).apply(init)
+}
+
+inline fun ViewGroup.floatingActionButton(init: FloatingActionButton.() -> Unit = {}): FloatingActionButton {
     val f = FloatingActionButton(context).apply(init)
     addView(f)
     return f

@@ -1,5 +1,6 @@
 package com.kent.layouts
 
+import android.content.Context
 import android.view.ViewGroup
 import android.widget.DatePicker
 
@@ -10,6 +11,11 @@ import android.widget.DatePicker
 /*
 * Date picker
 */
+
+inline fun Context.datePicker(init: DatePicker.() -> Unit = {}): DatePicker {
+    return DatePicker(this).apply(init)
+}
+
 inline fun ViewGroup.datePicker(init: DatePicker.() -> Unit = {}): DatePicker {
     val d = DatePicker(context).apply(init)
     addView(d)

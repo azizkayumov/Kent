@@ -16,10 +16,18 @@ import com.google.android.material.textview.MaterialTextView
  * Created by abduaziz on 2020-02-23 at 06:25.
  */
 
+inline fun Context.textView(init: AppCompatTextView.() -> Unit = {}): AppCompatTextView {
+    return AppCompatTextView(this).apply(init)
+}
+
 inline fun ViewGroup.textView(init: AppCompatTextView.() -> Unit = {}): AppCompatTextView {
     val a = AppCompatTextView(context).apply(init)
     addView(a)
     return a
+}
+
+inline fun Context.materialTextView(init: MaterialTextView.() -> Unit = {}): MaterialTextView {
+    return MaterialTextView(this).apply(init)
 }
 
 inline fun ViewGroup.materialTextView(init: MaterialTextView.() -> Unit = {}): MaterialTextView {
