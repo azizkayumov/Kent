@@ -4,6 +4,22 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-android'
 
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    def groupProjectID = 'com.kent.layouts'
+    def artifactProjectID = 'layouts'
+    def publishVersionID = '1.0.0'
+
+    userOrg = 'abduazizkayumov'
+    repoName = 'Kent'
+    groupId = groupProjectID
+    artifactId = artifactProjectID
+    publishVersion = publishVersionID
+    desc = 'Lightweight extension functions to build dynamic layouts'
+    website = 'https://github.com/AbduazizKayumov/Kent'
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
