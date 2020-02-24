@@ -4,7 +4,18 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import android.util.TypedValue
 import android.view.View
+import android.widget.FrameLayout
+import android.widget.GridLayout
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.google.android.material.bottomappbar.BottomAppBar
 
 /**
  * Created by abduaziz on 2020-02-22 at 05:54.
@@ -47,6 +58,42 @@ var View.verticalPadding: Int
 var View.padding: Int
     inline get() = paddingTop
     inline set(value) = setPadding(value, value, value, value)
+
+var AppBarLayout.LayoutParams.margin: Int
+    inline get() = marginEnd
+    inline set(value) = setMargins(value, value, value, value)
+
+var CollapsingToolbarLayout.LayoutParams.margin: Int
+    inline get() = marginEnd
+    inline set(value) = setMargins(value, value, value, value)
+
+var ConstraintLayout.LayoutParams.margin: Int
+    inline get() = marginEnd
+    inline set(value) = setMargins(value, value, value, value)
+
+var CoordinatorLayout.LayoutParams.margin: Int
+    inline get() = marginEnd
+    inline set(value) = setMargins(value, value, value, value)
+
+var DrawerLayout.LayoutParams.margin: Int
+    inline get() = marginEnd
+    inline set(value) = setMargins(value, value, value, value)
+
+var FrameLayout.LayoutParams.margin: Int
+    inline get() = marginEnd
+    inline set(value) = setMargins(value, value, value, value)
+
+var GridLayout.LayoutParams.margin: Int
+    inline get() = marginEnd
+    inline set(value) = setMargins(value, value, value, value)
+
+var LinearLayout.LayoutParams.margin: Int
+    inline get() = marginEnd
+    inline set(value) = setMargins(value, value, value, value)
+
+var RelativeLayout.LayoutParams.margin: Int
+    inline get() = marginEnd
+    inline set(value) = setMargins(value, value, value, value)
 
 fun View.setRippleEffect() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

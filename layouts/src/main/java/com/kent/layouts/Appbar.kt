@@ -2,6 +2,7 @@ package com.kent.layouts
 
 import android.content.Context
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar
@@ -27,6 +28,16 @@ inline fun Context.collapsingToolbarLayout(init: CollapsingToolbarLayout.() -> U
 
 inline fun ViewGroup.collapsingToolbarLayout(init: CollapsingToolbarLayout.() -> Unit): CollapsingToolbarLayout {
     val a = CollapsingToolbarLayout(context).apply(init)
+    addView(a)
+    return a
+}
+
+inline fun Context.toolbar(init: Toolbar.() -> Unit): Toolbar {
+    return Toolbar(this).apply(init)
+}
+
+inline fun ViewGroup.toolbar(init: Toolbar.() -> Unit): Toolbar {
+    val a = Toolbar(context).apply(init)
     addView(a)
     return a
 }

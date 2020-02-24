@@ -1,4 +1,4 @@
-package com.kent.sample
+package com.kent.sample.fragment
 
 import android.graphics.Color
 import android.view.Gravity
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.kent.layouts.*
 import com.kent.layouts.viewgroup.frameLayout
+import com.kent.sample.R
 
 /**
  * Created by abduaziz on 2020-02-23 at 07:53.

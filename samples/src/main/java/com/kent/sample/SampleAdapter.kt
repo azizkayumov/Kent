@@ -8,24 +8,22 @@ import com.kent.layouts.*
 import com.kent.layouts.viewgroup.frameLayout
 
 /**
- * Created by abduaziz on 2020-02-22 at 07:46.
+ * Created by abduaziz on 2020-02-24 at 13:42.
  */
 
-class RVAdapter : RecyclerView.Adapter<RVAdapter.ViewHolder>() {
+class SampleAdapter : RecyclerView.Adapter<SampleAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            parent.context.frameLayout {
-                layoutParams = ViewGroup.LayoutParams(matchParent, dip(56))
-                padding = dip(16)
-                setRippleEffect()
+        return ViewHolder(parent.context.frameLayout {
+            layoutParams = ViewGroup.LayoutParams(matchParent, dip(56))
+            padding = dip(16)
+            setRippleEffect()
 
-                textView {
-                    layoutParams = FrameLayout.LayoutParams(wrapContent, wrapContent)
-                    text = "Hello, Kent!"
-                }
+            textView {
+                layoutParams = FrameLayout.LayoutParams(wrapContent, wrapContent)
+                text = "Hello, World!"
             }
-        )
+        })
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
