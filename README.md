@@ -1,3 +1,4 @@
+[ ![Download](https://api.bintray.com/packages/abduazizkayumov/Kent/layouts/images/download.svg?version=1.0.0) ](https://bintray.com/abduazizkayumov/Kent/layouts/1.0.0/link) [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 # Kent
 Kent is a set of extension functions to build dynamic Android layouts. The purpose of this library is to make UI code clean, easy to read and as simple as possible without introducing extra logic.  
 
@@ -152,11 +153,18 @@ Create extension function of ViewGroup for your custom view, example for `SwipeR
         return a
     }
 
- See more examples in [samples](https://github.com/AbduazizKayumov/Kent/tree/master/samples/src/main/java/com/kent/sample)
+#### Install Kent Layouts:
+Add this dependency to your app level *build.gradle*:
 
-#### Using Kent Layouts:
+```
+implementation 'com.kent.layouts:layouts:1.0.0'
+```
+Make sure you have jcenter() in your project level *build.gradle*.
 
-## Fragment ([docs](https://github.com/AbduazizKayumov/Kent/wiki))
+#### More examples:
+See more examples in [samples](https://github.com/AbduazizKayumov/Kent/tree/master/samples/src/main/java/com/kent/sample)
+
+## Fragment ([wiki](https://github.com/AbduazizKayumov/Kent/wiki))
 *Kent Fragment* is an abstract class with its view and aims to solve the problems:  
 1. Painless fragment management than support lib's fragment
 2. Swipe back to dismiss
