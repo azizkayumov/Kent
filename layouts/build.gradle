@@ -56,8 +56,8 @@ dependencies {
     testImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     testImplementation 'org.robolectric:robolectric:4.3'
 
-    implementation "androidx.appcompat:appcompat:$androidx_support"
     implementation "androidx.core:core-ktx:$androidx_core"
+    implementation "androidx.appcompat:appcompat:$androidx_support"
     implementation "androidx.recyclerview:recyclerview:$androidx_support"
     implementation "com.google.android.material:material:$androidx_support"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"

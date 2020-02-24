@@ -154,13 +154,20 @@ Create extension function of ViewGroup for your custom view, example for `SwipeR
     }
 
 #### Install Kent Layouts:
-Add this dependency to your app level *build.gradle*:
-
+Add these dependencies to your app level *build.gradle*:
 ```
+implementation "androidx.core:core-ktx:{latest_version}"
+
+implementation "androidx.appcompat:appcompat:{latest_version}"
+
+implementation "androidx.recyclerview:recyclerview:{latest_version}"
+
+implementation "com.google.android.material:material:{latest_version}"
+
+implementation "androidx.constraintlayout:constraintlayout:{latest_version}"
+
 implementation 'com.kent.layouts:layouts:1.0.0'
 ```
-Make sure you have jcenter() in your project level *build.gradle*.
-
 #### More examples:
 See more examples in [samples](https://github.com/AbduazizKayumov/Kent/tree/master/samples/src/main/java/com/kent/sample)
 
