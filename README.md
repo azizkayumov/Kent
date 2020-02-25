@@ -1,14 +1,6 @@
 [ ![Download](https://api.bintray.com/packages/abduazizkayumov/Kent/layouts/images/download.svg?version=1.0.0) ](https://bintray.com/abduazizkayumov/Kent/layouts/1.0.0/link) [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 # Kent
-Kent is a set of extension functions to build dynamic Android layouts. The purpose of this library is to make UI code clean, easy to read and as simple as possible without introducing extra logic.  
-
-Kent consists of two parts:  
-  * Layouts - a fast and simple way to write dynamic Android layouts  
-  * Fragment - lightweight fragment (not reinventing the wheel here)
-
-## Layouts
-
-*Kent Layouts* is a set of helper functions for writing Android layouts. A simple UI code with Kent Layouts:
+Kent is a set of extension functions to build dynamic Android layouts. The purpose of this library is to make UI code clean, easy to read and as simple as possible without introducing extra logic. Simple UI code with Kent Layouts:
 ```kotlin      
 verticalLayout {
     lparams(matchParent, matchParent)
@@ -26,7 +18,22 @@ Usually, XML is used to build Android UI. Major disadvantages of XML:
 `if profile.isOwner: addOwnerPhoto()`
 3. XML is not null-safe which leads to NPEs.
 
-The purpose of this project is to supersede [Anko Layouts](https://github.com/Kotlin/anko/wiki/Anko-Layouts#why-anko-layouts) with support for AndroidX.  
+The main goal is to supersede [Anko Layouts](https://github.com/Kotlin/anko/wiki/Anko-Layouts#why-anko-layouts) (since it is [deprecated](https://github.com/Kotlin/anko/blob/master/GOODBYE.md)) with support for AndroidX.  
+#### Install Kent Layouts:
+Add these dependencies to your app level *build.gradle*:
+```
+implementation "androidx.core:core-ktx:1.2.0"
+
+implementation "androidx.appcompat:appcompat:1.1.0"
+
+implementation "androidx.recyclerview:recyclerview:1.1.0"
+
+implementation "com.google.android.material:material:1.1.0"
+
+implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+
+implementation 'com.kent.layouts:layouts:1.0.0'
+```
 #### How to use it?
 You can build your UI dynamically in a conventional way, but even in Kotlin, it would be longer:
 ```
@@ -144,38 +151,13 @@ And the result is more beatiful, concise and easy to understand code:
         text = "Click me!"
     }
 
-#### How to use Custom Views?
+#### How to use with custom views?
 Create extension function of ViewGroup for your custom view, example for `SwipeRefreshLayout`:
 
-    inline fun ViewGroup.button(init: SwipeRefreshLayout.() -> Unit = {}): SwipeRefreshLayout {
+    inline fun ViewGroup.swipeRefresh(init: SwipeRefreshLayout.() -> Unit = {}): SwipeRefreshLayout {
         val a = SwipeRefreshLayout(context).apply(init)
         addView(a)
         return a
     }
-
-#### Install Kent Layouts:
-Add these dependencies to your app level *build.gradle*:
-```
-implementation "androidx.core:core-ktx:{latest_version}"
-
-implementation "androidx.appcompat:appcompat:{latest_version}"
-
-implementation "androidx.recyclerview:recyclerview:{latest_version}"
-
-implementation "com.google.android.material:material:{latest_version}"
-
-implementation "androidx.constraintlayout:constraintlayout:{latest_version}"
-
-implementation 'com.kent.layouts:layouts:1.0.0'
-```
 #### More examples:
 See more examples in [samples](https://github.com/AbduazizKayumov/Kent/tree/master/samples/src/main/java/com/kent/sample)
-
-## Fragment ([wiki](https://github.com/AbduazizKayumov/Kent/wiki))
-*Kent Fragment* is an abstract class with its view and aims to solve the problems:  
-1. Painless fragment management than support lib's fragment
-2. Swipe back to dismiss
-3. Smooth enter / exit animations
-4. Theme / language changes without ****Activity restart****  
-
-Custom fragment was created to remove Google as my "single point of failure" and to make things simpler. Simplicity is the key idea to create custom fragment: support lib's fragment is 3000+ lines of code whereas Kent Fragment is <150 lines. Refer to wiki for more usage.
