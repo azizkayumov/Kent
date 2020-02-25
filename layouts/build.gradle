@@ -20,6 +20,10 @@ publish {
     website = 'https://github.com/AbduazizKayumov/Kent'
 }
 
+bintray {
+    override = true
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"

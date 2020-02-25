@@ -40,5 +40,4 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
 
     implementation project(":layouts")
-    implementation project(":fragment")
 }

@@ -1,1 +1,1 @@
-include ':samples', ':layouts', ':fragment'
+include ':samples', ':layouts'

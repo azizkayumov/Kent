@@ -1,5 +1,6 @@
 package com.kent.sample
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +8,10 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.snackbar.Snackbar
 import com.kent.layouts.*
+import com.kent.layouts.toolbar
 import com.kent.layouts.viewgroup.coordinatorLayout
 import com.kent.layouts.viewgroup.lparams
+import kotlinx.android.synthetic.main.activity_basic.*
 
 class BasicActivity : AppCompatActivity() {
 
@@ -29,6 +32,7 @@ class BasicActivity : AppCompatActivity() {
     private fun initUI() {
         coordinatorLayout {
             lparams(matchParent, matchParent)
+            setBackgroundColor(Color.WHITE)
 
             appBarLayout {
                 layoutParams = CoordinatorLayout.LayoutParams(matchParent, wrapContent)
