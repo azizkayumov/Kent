@@ -1,10 +1,9 @@
-[ ![Download](https://api.bintray.com/packages/abduazizkayumov/Kent/layouts/images/download.svg?version=1.0.0) ](https://bintray.com/abduazizkayumov/Kent/layouts/1.0.0/link) [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
+[ ![Download](https://api.bintray.com/packages/abduazizkayumov/Kent/layouts/images/download.svg?version=1.0.0) ](https://bintray.com/abduazizkayumov/Kent/layouts/1.0.0/link) [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 # Kent
 Kent is a set of extension functions to build dynamic Android layouts. The purpose of this library is to make UI code clean, easy to read and as simple as possible without introducing extra logic. Simple UI code with Kent Layouts:
 ```kotlin      
 verticalLayout {
     lparams(matchParent, matchParent)
-
     textView {
         text = "Hello, World!"
     }
@@ -14,11 +13,14 @@ There is no magic here, only two extension functions that turns noisy code to si
 #### Why dynamic layouts?
 Usually, XML is used to build Android UI. Major disadvantages of XML:
 1. XML is parsed on the device wasting battery and CPU time, and view inflations affects the [cold start time](https://developer.android.com/topic/performance/vitals/launch-time#cold)
-2. You can't insert code logic inside XML, for example:
-`if profile.isOwner: addOwnerPhoto()`
-3. XML is not null-safe which leads to NPEs.
+2. You can't insert code logic inside XML
+3. XML is not null-safe which leads to NPEs.  
+4. You repeat `android` and `app` almost in every line
+5. XML is static, you can't dynamically add / remove views according to app logic, for example:
+`if isLoggedIn: addOwnerPhoto() else addLoginButton()`
+and many more [reasons](https://github.com/Kotlin/anko/wiki/Anko-Layouts#why-a-dsl)
 
-The main goal is to supersede [Anko Layouts](https://github.com/Kotlin/anko/wiki/Anko-Layouts#why-anko-layouts) (since it is [deprecated](https://github.com/Kotlin/anko/blob/master/GOODBYE.md)) with support for AndroidX.  
+The main goal is to supersede [Anko Layouts](https://github.com/Kotlin/anko/wiki/Anko-Layouts#why-anko-layouts) (since it is [deprecated](https://github.com/Kotlin/anko/blob/master/GOODBYE.md)) with support for AndroidX and excluding all other gigantic util code.  
 #### Install Kent Layouts:
 Add these dependencies to your app level *build.gradle*:
 ```
@@ -42,19 +44,12 @@ override fun onCreate(savedInstanceState: Bundle?) {
     val parent = LinearLayout(this)
     parent.orientation = LinearLayout.VERTICAL
     parent.layoutParams = ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT)
-
-    val text = TextView(this)
-    text.layoutParams = LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
-    text.text = "Hello, World!"
-
     val btn = Button(this)
     btn.layoutParams = LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
     btn.text = "Click me!"
     btn.setOnClickListener {
         Toast.makeText(this, "Hello, World!", Toast.LENGTH_SHORT).show()
     }
-
-    parent.addView(text)
     parent.addView(btn)
     setContentView(parent)
 }
@@ -65,12 +60,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     verticalLayout {
           lparams(matchParent, matchParent)
-          textView {
-              layoutParams = LinearLayout.LayoutParams(wrapContent, wrapContent)
-              text = "Hello, World!"
-          }
           button {
-              layoutParams = LinearLayout.LayoutParams(wrapContent, wrapContent)
               text = "Click me!"
               setOnClickListener {
                   toast("Hello, World!")
@@ -95,7 +85,10 @@ return ViewHolder(parent.context.frameLayout {
 })
 ```
 Most of the standard Android views and view groups have their extensions so that you don't need to waste time writing extensions, here is the complete list:
-  * ViewGroups
+<details>
+  <summary>ViewGroups</summary>  
+
+  ```
     * AppBarLayout
     * BottomAppBar
     * CollapsingToolbarLayout
@@ -106,9 +99,14 @@ Most of the standard Android views and view groups have their extensions so that
     * GridLayout
     * LinearLayout
     * RelativeLayout
-  * Views
-    * Buttons
-      * Button
+  ```
+</details>
+<details>
+  <summary>Views</summary>  
+
+  ```
+    * Buttons  
+      * Button  
       * MaterialButton
       * FloatingActionButton
     * CardView & MaterialCardView
@@ -128,7 +126,9 @@ Most of the standard Android views and view groups have their extensions so that
     * TextView
     * EditText & TextInputEditText & TextInputLayout
     * View
-    * ViewGroup & ViewGroup2
+    * ViewPager & ViewPager2
+  ```
+</details>
 
 #### How it works?
 Using Kotlin extension functions, we can convert this conventional code:
@@ -160,4 +160,5 @@ Create extension function of ViewGroup for your custom view, example for `SwipeR
         return a
     }
 #### More examples:
-See more examples in [samples](https://github.com/AbduazizKayumov/Kent/tree/master/samples/src/main/java/com/kent/sample)
+See more examples in [samples](https://github.com/AbduazizKayumov/Kent/tree/master/samples/src/main/java/com/kent/sample)  
+An open source app entirely written using Kent Layouts: [Flashcards Maker](https://github.com/AbduazizKayumov/Flashcard-Maker-Android)
