@@ -4,12 +4,12 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-android'
 
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.panpf.bintray-publish'
 
 publish {
     def groupProjectID = 'com.kent.layouts'
     def artifactProjectID = 'layouts'
-    def publishVersionID = '1.0.0'
+    def publishVersionID = '1.0.1'
 
     userOrg = 'abduazizkayumov'
     repoName = 'Kent'
@@ -58,12 +58,6 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "com.google.android.material:material:1.2.1"
     implementation "androidx.constraintlayout:constraintlayout:2.0.4"
-
-    // Test
-    testImplementation 'androidx.test:core:1.3.0'
-    testImplementation 'androidx.test:runner:1.3.0'
-    testImplementation 'androidx.test.ext:junit:1.1.2'
-    testImplementation 'org.robolectric:robolectric:4.3'
 }
 
 repositories {

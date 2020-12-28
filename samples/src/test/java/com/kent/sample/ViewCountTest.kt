@@ -1,11 +1,14 @@
-package com.kent.layouts
+package com.kent.sample
 
 import android.content.Context
 import android.os.Build
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.test.core.app.ApplicationProvider
+import com.kent.layouts.matchParent
+import com.kent.layouts.textView
 import com.kent.layouts.viewgroup.verticalLayout
+import com.kent.layouts.wrapContent
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -13,15 +16,10 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 import kotlin.random.Random
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see [Testing documentation](http://d.android.com/tools/testing)
- */
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.P])
-class ExampleUnitTest {
+class ViewCountTest {
 
     @Test
     fun addView_viewCount() {
@@ -29,11 +27,17 @@ class ExampleUnitTest {
 
         val context = ApplicationProvider.getApplicationContext<Context>()
         val r = context.verticalLayout {
-            layoutParams = ViewGroup.LayoutParams(matchParent, matchParent)
+            layoutParams = ViewGroup.LayoutParams(
+                matchParent,
+                matchParent
+            )
 
             for (i in 0 until viewCount) {
                 textView {
-                    layoutParams = LinearLayout.LayoutParams(wrapContent, wrapContent)
+                    layoutParams = LinearLayout.LayoutParams(
+                        wrapContent,
+                        wrapContent
+                    )
                     text = "Text $i"
                 }
             }
