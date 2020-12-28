@@ -24,25 +24,20 @@ import kotlin.random.Random
 class ExampleUnitTest {
 
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, (2 + 2).toLong())
-    }
-
-    @Test
     fun addView_viewCount() {
-        val view_count = Random.nextInt(0, 10000)
+        val viewCount = Random.nextInt(0, 10000)
 
         val context = ApplicationProvider.getApplicationContext<Context>()
         val r = context.verticalLayout {
             layoutParams = ViewGroup.LayoutParams(matchParent, matchParent)
 
-            for (i in 0 until view_count) {
+            for (i in 0 until viewCount) {
                 textView {
                     layoutParams = LinearLayout.LayoutParams(wrapContent, wrapContent)
                     text = "Text $i"
                 }
             }
         }
-        assertEquals(view_count, r.childCount)
+        assertEquals(viewCount, r.childCount)
     }
 }
