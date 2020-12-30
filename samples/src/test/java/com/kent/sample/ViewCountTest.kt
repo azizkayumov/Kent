@@ -27,10 +27,7 @@ class ViewCountTest {
 
         val context = ApplicationProvider.getApplicationContext<Context>()
         val r = context.verticalLayout {
-            layoutParams = ViewGroup.LayoutParams(
-                matchParent,
-                matchParent
-            )
+            layoutParams = ViewGroup.LayoutParams(matchParent,matchParent)
 
             for (i in 0 until viewCount) {
                 textView {

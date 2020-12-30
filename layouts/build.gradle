@@ -43,10 +43,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    testOptions {
-        unitTests.includeAndroidResources = true
-    }
 }
 
 dependencies {
