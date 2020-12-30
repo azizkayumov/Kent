@@ -1,4 +1,4 @@
-[ ![Download](https://api.bintray.com/packages/abduazizkayumov/Kent/layouts/images/download.svg?version=1.0.0) ](https://bintray.com/abduazizkayumov/Kent/layouts/1.0.0/link) [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
+[![build](https://github.com/AbduazizKayumov/Kent/workflows/build/badge.svg)](https://github.com/AbduazizKayumov/Kent/actions) [![Download](https://api.bintray.com/packages/abduazizkayumov/Kent/layouts/images/download.svg?version=1.0.1)](https://bintray.com/abduazizkayumov/Kent/layouts/1.0.1/link) [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 # Kent
 Kent is a set of extension functions to build dynamic Android layouts. The purpose of this library is to make UI code clean, easy to read and as simple as possible without introducing extra logic. Simple UI code with Kent Layouts:
 ```kotlin      
@@ -24,17 +24,17 @@ The main goal is to supersede [Anko Layouts](https://github.com/Kotlin/anko/wiki
 #### Install Kent Layouts:
 Add these dependencies to your app level *build.gradle*:
 ```
-implementation "androidx.core:core-ktx:1.2.0"
+implementation "androidx.core:core-ktx:1.3.2"
 
-implementation "androidx.appcompat:appcompat:1.1.0"
+implementation "androidx.appcompat:appcompat:1.2.0"
 
 implementation "androidx.recyclerview:recyclerview:1.1.0"
 
-implementation "com.google.android.material:material:1.1.0"
+implementation "com.google.android.material:material:1.2.1"
 
-implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+implementation "androidx.constraintlayout:constraintlayout:2.0.4"
 
-implementation 'com.kent.layouts:layouts:1.0.0'
+implementation 'com.kent.layouts:layouts:1.0.1'
 ```
 #### How to use it?
 You can build your UI dynamically in a conventional way, but even in Kotlin, it would be longer:
